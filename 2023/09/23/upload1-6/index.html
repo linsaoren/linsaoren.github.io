@@ -20,30 +20,394 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="天天睡大觉">
-<meta property="og:type" content="website">
-<meta property="og:title" content="尼克狐尼克避暑胜地">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Pass-01上传一个php文件，结果显示只能上传图片文件 Pass-01上传一个php文件，结果显示只能上传图片文件  直接上传一个jpg格式文件，直接成功，打开burp suite，截获。  修改为php后forward。然后intercept is off 查看是否上传成功。  上传成功 Pass-02上传php文件失败  上传 jpg结果成功  上传 php  结果失败  ，上传php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="upload-lapbs（1-21关)">
+<meta property="og:url" content="http://example.com/2023/09/23/upload1-6/index.html">
 <meta property="og:site_name" content="尼克狐尼克避暑胜地">
-<meta property="og:description" content="天天睡大觉">
+<meta property="og:description" content="Pass-01上传一个php文件，结果显示只能上传图片文件 Pass-01上传一个php文件，结果显示只能上传图片文件  直接上传一个jpg格式文件，直接成功，打开burp suite，截获。  修改为php后forward。然后intercept is off 查看是否上传成功。  上传成功 Pass-02上传php文件失败  上传 jpg结果成功  上传 php  结果失败  ，上传php">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203009156.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171105446.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171602942.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203206226.png">
+<meta property="og:image" content="http://example.com/image/image-20230627171722835.png">
+<meta property="og:image" content="http://example.com/image/1.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203515828.png">
+<meta property="og:image" content="http://example.com/image/image-20230923203646256.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204023817.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204316395.png">
+<meta property="og:image" content="http://example.com/image/image-20230923204718920.png">
+<meta property="og:image" content="http://example.com/image/20210321160951618.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211016650.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211315553.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211432473.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211450134.png">
+<meta property="og:image" content="http://example.com/image/image-20230923211537241.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215459491.png">
+<meta property="og:image" content="http://example.com/image/image-20230923215851124.png">
+<meta property="article:published_time" content="2023-09-23T14:13:42.253Z">
+<meta property="article:modified_time" content="2023-09-23T14:13:42.253Z">
 <meta property="article:author" content="尼克狐尼克">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/image-20230923203009156.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/09/23/upload1-6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>尼克狐尼克避暑胜地</title>
+  <title>upload-lapbs（1-21关) | 尼克狐尼克避暑胜地</title>
   
 
 
@@ -141,9 +505,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -159,10 +524,9 @@
       <meta itemprop="name" content="尼克狐尼克避暑胜地">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/23/upload1-6/" class="post-title-link" itemprop="url">upload-lapbs（1-21关)</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          upload-lapbs（1-21关)
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -185,7 +549,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Pass-01"><a href="#Pass-01" class="headerlink" title="Pass-01"></a>Pass-01</h3><p>上传一个php文件，结果显示只能上传图片文件</p>
+        <h3 id="Pass-01"><a href="#Pass-01" class="headerlink" title="Pass-01"></a>Pass-01</h3><p>上传一个php文件，结果显示只能上传图片文件</p>
 <h3 id="Pass-01-1"><a href="#Pass-01-1" class="headerlink" title="Pass-01"></a>Pass-01</h3><p>上传一个php文件，结果显示只能上传图片文件</p>
 <p><img src="/../image/image-20230923203009156.png" alt="image-20230923203009156"></p>
 <p>直接上传一个jpg格式文件，直接成功，打开burp suite，截获。</p>
@@ -1208,359 +1572,30 @@
 <h3 id="Pass-06-18"><a href="#Pass-06-18" class="headerlink" title="Pass-06"></a>Pass-06</h3><p>然后使用蚁剑连接图像地址后，用蚁剑访问将文件名改为readme.php。</p>
 <p>(一直搞不明白为什么打开图片地址都是403forbidden)还在学习中。</p>
 <h3 id="Pass-06-19"><a href="#Pass-06-19" class="headerlink" title="Pass-06"></a>Pass-06</h3>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/22/requests%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E8%AF%A6%E7%BB%86%E6%95%B0%E6%8D%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="尼克狐尼克">
-      <meta itemprop="description" content="天天睡大觉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尼克狐尼克避暑胜地">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/22/requests%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E8%AF%A6%E7%BB%86%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-09-22 14:25:02" itemprop="dateCreated datePublished" datetime="2023-09-22T14:25:02+08:00">2023-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-22 13:57:23" itemprop="dateModified" datetime="2022-12-22T13:57:23+08:00">2022-12-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="requests爬取豆瓣电影详细数据"><a href="#requests爬取豆瓣电影详细数据" class="headerlink" title="requests爬取豆瓣电影详细数据"></a>requests爬取豆瓣电影详细数据</h2><h3 id="实战代码："><a href="#实战代码：" class="headerlink" title="实战代码："></a>实战代码：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#UA伪装</span></span><br><span class="line">    headers =&#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#导入URL</span></span><br><span class="line">    url = <span class="string">&#x27;https://movie.douban.com/j/chart/top_list&#x27;</span></span><br><span class="line">    param = &#123;</span><br><span class="line">        <span class="string">&#x27;type&#x27;</span>:<span class="string">&#x27;24&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;interval_id&#x27;</span>:<span class="string">&#x27;100:90&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;acting&#x27;</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;start&#x27;</span>:<span class="string">&#x27;1&#x27;</span>,<span class="comment">#开始的位置（从哪里哪里开始）</span></span><br><span class="line">        <span class="string">&#x27;limit&#x27;</span>:<span class="string">&#x27;20&#x27;</span>,<span class="comment">#结束的位置（一次请求取出的东西）</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#发起请求</span></span><br><span class="line">    r = requests.get(url = url,params=param,headers=headers)</span><br><span class="line">    <span class="comment">#获取响应数据</span></span><br><span class="line">    listdata = r.json()</span><br><span class="line">    <span class="comment">#持久化存储</span></span><br><span class="line">    fp = <span class="built_in">open</span>(<span class="string">&#x27;./douban.json&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    json.dump(listdata,fp=fp,ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取结束！！！&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
 
 
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/09/22/requests%E7%88%AC%E5%8F%96%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E8%AF%A6%E7%BB%86%E6%95%B0%E6%8D%AE/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/22/requests%E7%A0%B4%E8%A7%A3%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="尼克狐尼克">
-      <meta itemprop="description" content="天天睡大觉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尼克狐尼克避暑胜地">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/22/requests%E7%A0%B4%E8%A7%A3%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-09-22 14:25:02" itemprop="dateCreated datePublished" datetime="2023-09-22T14:25:02+08:00">2023-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-22 13:56:01" itemprop="dateModified" datetime="2022-12-22T13:56:01+08:00">2022-12-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="requests破解百度翻译"><a href="#requests破解百度翻译" class="headerlink" title="requests破解百度翻译"></a>requests破解百度翻译</h2><h3 id="查询其url、请求方式、以及响应数据的形式（按F12）"><a href="#查询其url、请求方式、以及响应数据的形式（按F12）" class="headerlink" title="查询其url、请求方式、以及响应数据的形式（按F12）"></a>查询其url、请求方式、以及响应数据的形式（按F12）</h3><h4 id="实战代码："><a href="#实战代码：" class="headerlink" title="实战代码："></a>实战代码：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post请求（携带了参数）</span></span><br><span class="line"><span class="comment"># 响应数据是一组json数据</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#UA伪装</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#指定URL</span></span><br><span class="line">    url = <span class="string">&#x27;https://fanyi.baidu.com/sug&#x27;</span></span><br><span class="line">    <span class="comment">#post 请求参数处理 ， 同get请求的一致</span></span><br><span class="line">    k = <span class="built_in">input</span>(<span class="string">&#x27;enter a word:&#x27;</span>)</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">&#x27;kw&#x27;</span>: k</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#请求发送</span></span><br><span class="line">    r = requests.post(url = url, data = data , headers = headers)</span><br><span class="line">    <span class="comment">#获取响应数据</span></span><br><span class="line">    r.json()  <span class="comment">#直接返回的是一个obj（对象）,如果确认服务器响应数据是json类型的才可以使用json（）</span></span><br><span class="line">    <span class="comment">#可以在抓包工具那里看是不是json数据</span></span><br><span class="line">    dogobj = r.json()</span><br><span class="line">    <span class="built_in">print</span>(dogobj)</span><br><span class="line">    <span class="comment">#进行持久化存储(直接存到json文本当中)</span></span><br><span class="line">    fileName = k+<span class="string">&#x27;.json&#x27;</span></span><br><span class="line">    fp = <span class="built_in">open</span>(fileName,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    json.dump(dogobj,fp=fp,ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;数据爬取结束!!!!!&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/08/requests%E7%AE%80%E6%98%93%E7%BD%91%E9%A1%B5%E9%87%87%E9%9B%86%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="尼克狐尼克">
-      <meta itemprop="description" content="天天睡大觉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尼克狐尼克避暑胜地">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/08/requests%E7%AE%80%E6%98%93%E7%BD%91%E9%A1%B5%E9%87%87%E9%9B%86%E5%99%A8/" class="post-title-link" itemprop="url">requests简易网页采集器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-03-08 19:28:40 / 修改时间：19:40:42" itemprop="dateCreated datePublished" datetime="2023-03-08T19:28:40+08:00">2023-03-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="requests巩固深入介绍"><a href="#requests巩固深入介绍" class="headerlink" title="requests巩固深入介绍"></a>requests巩固深入介绍</h2><p>​	<strong>在搜狗当中录入关键字：</strong>爬取关键字的页面的数据</p>
-<p>​		<strong>实战代码：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#step 1:指定URL</span></span><br><span class="line">    <span class="comment">#step 2:发起请求</span></span><br><span class="line">    <span class="comment">#get方法会返回一个响应对象</span></span><br><span class="line">    <span class="comment">#step 3:获取响应数据,text返回的是字符串形式的响应数据</span></span><br><span class="line">    <span class="comment">#step 4:持久化存储,需要将pagetext存储</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#UA：User-Agent(请求载体的身份标识)</span></span><br><span class="line">    <span class="comment">#UA检测：门户网站的服务器会检测对应请求的载体身份标识为某一浏览器，</span></span><br><span class="line">    <span class="comment">#说明该请求是一个正常的请求。但是如果请求的身份标识，则该请求为不正常的请求(爬虫)</span></span><br><span class="line">    <span class="comment">#则服务器很有可能拒绝该次请求。</span></span><br><span class="line">    <span class="comment">#UA伪装(反爬策略)：让爬虫对应的请求载体的身份标识伪装成某一浏览器的身份标识</span></span><br><span class="line">    <span class="comment">#UA伪装：将对应的User-Agent封装到一个字典中</span></span><br><span class="line">    headers =&#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    url = <span class="string">&#x27;https://www.sogou.com/web&#x27;</span></span><br><span class="line">    <span class="comment"># 处理URL携带的参数，把它设为一个动态值  :封装到字典中</span></span><br><span class="line">    kw = <span class="built_in">input</span>(<span class="string">&#x27;enter a word:&#x27;</span>)</span><br><span class="line">    <span class="comment">#字典</span></span><br><span class="line">    param = &#123;</span><br><span class="line">        <span class="string">&#x27;query&#x27;</span>:kw</span><br><span class="line">    &#125;</span><br><span class="line">    r = requests.get(url=url,params=param,headers=headers)</span><br><span class="line">    pagetext = r.text</span><br><span class="line">    <span class="built_in">print</span>(pagetext)</span><br><span class="line">    fileNmae = kw+<span class="string">&#x27;.html&#x27;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(fileNmae,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(pagetext)</span><br><span class="line">    <span class="built_in">print</span>(fileNmae,<span class="string">&quot;保存成功！！&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/08/requests%E7%AC%AC%E4%B8%80%E8%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="尼克狐尼克">
-      <meta itemprop="description" content="天天睡大觉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尼克狐尼克避暑胜地">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/08/requests%E7%AC%AC%E4%B8%80%E8%A1%80/" class="post-title-link" itemprop="url">requests第一血</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-03-08 19:28:40 / 修改时间：19:40:18" itemprop="dateCreated datePublished" datetime="2023-03-08T19:28:40+08:00">2023-03-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>​		1.urllib模块</p>
-<p>​		2.requests模块</p>
-<h3 id="request模块"><a href="#request模块" class="headerlink" title="request模块"></a>request模块</h3><p>​	requests模块：python中原生的一款基于网络请求的模块，功能非常强大，简单便捷，效率极高。</p>
-<p>​	作用：模拟浏览器发请求。</p>
-<h4 id="requests模块如何使用（编码流程）："><a href="#requests模块如何使用（编码流程）：" class="headerlink" title="requests模块如何使用（编码流程）："></a>requests模块如何使用（编码流程）：</h4><p>​		1.指定URL</p>
-<p>​		2.发起一个http或者https请求</p>
-<p>​		3.获取想要的数据</p>
-<p>​		4.持久化存储（存储的响应数据，所爬取到的数据）</p>
-<h5 id="环境的安装："><a href="#环境的安装：" class="headerlink" title="环境的安装："></a>环境的安装：</h5><p>​		安装requests</p>
-<h5 id="实战编码："><a href="#实战编码：" class="headerlink" title="实战编码："></a>实战编码：</h5><p>​		需求：爬取搜狗首页的页面数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#step 1:指定URL</span></span><br><span class="line">    url=<span class="string">&#x27;https://www.sogou.com/&#x27;</span></span><br><span class="line">    <span class="comment">#step 2:发起请求</span></span><br><span class="line">    <span class="comment">#get方法会返回一个响应对象</span></span><br><span class="line">    r = requests.get(url=url)</span><br><span class="line">    <span class="comment">#step 3:获取响应数据,text返回的是字符串形式的响应数据</span></span><br><span class="line">    pagetext = r.text</span><br><span class="line">    <span class="built_in">print</span>(pagetext)</span><br><span class="line">    <span class="comment">#step 4:持久化存储,需要将pagetext存储</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./sougou.html&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(pagetext)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;爬取数据结束！！！&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="尼克狐尼克">
-      <meta itemprop="description" content="天天睡大觉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="尼克狐尼克避暑胜地">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/03/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-03 16:42:56" itemprop="dateCreated datePublished" datetime="2023-03-03T16:42:56+08:00">2023-03-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -1613,6 +1648,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01"><span class="nav-number">1.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-1"><span class="nav-number">2.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02"><span class="nav-number">3.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03"><span class="nav-number">4.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04"><span class="nav-number">5.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05"><span class="nav-number">6.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06"><span class="nav-number">7.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-2"><span class="nav-number">8.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-1"><span class="nav-number">9.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-1"><span class="nav-number">10.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-1"><span class="nav-number">11.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-1"><span class="nav-number">12.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-1"><span class="nav-number">13.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-3"><span class="nav-number">14.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-2"><span class="nav-number">15.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-2"><span class="nav-number">16.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-2"><span class="nav-number">17.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-2"><span class="nav-number">18.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-2"><span class="nav-number">19.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-3"><span class="nav-number">20.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-4"><span class="nav-number">21.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-4"><span class="nav-number">22.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-3"><span class="nav-number">23.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-3"><span class="nav-number">24.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-3"><span class="nav-number">25.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-3"><span class="nav-number">26.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-5"><span class="nav-number">27.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-5"><span class="nav-number">28.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-4"><span class="nav-number">29.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-4"><span class="nav-number">30.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-4"><span class="nav-number">31.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-4"><span class="nav-number">32.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-6"><span class="nav-number">33.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-6"><span class="nav-number">34.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-5"><span class="nav-number">35.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-5"><span class="nav-number">36.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-5"><span class="nav-number">37.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-5"><span class="nav-number">38.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-7"><span class="nav-number">39.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-7"><span class="nav-number">40.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-6"><span class="nav-number">41.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-6"><span class="nav-number">42.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-6"><span class="nav-number">43.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-6"><span class="nav-number">44.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-8"><span class="nav-number">45.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-8"><span class="nav-number">46.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-7"><span class="nav-number">47.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-7"><span class="nav-number">48.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-7"><span class="nav-number">49.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-7"><span class="nav-number">50.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-8"><span class="nav-number">51.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-9"><span class="nav-number">52.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-9"><span class="nav-number">53.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-9"><span class="nav-number">54.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-8"><span class="nav-number">55.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-8"><span class="nav-number">56.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-8"><span class="nav-number">57.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-10"><span class="nav-number">58.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-10"><span class="nav-number">59.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-10"><span class="nav-number">60.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-9"><span class="nav-number">61.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-9"><span class="nav-number">62.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-9"><span class="nav-number">63.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-10"><span class="nav-number">64.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-11"><span class="nav-number">65.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-11"><span class="nav-number">66.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-11"><span class="nav-number">67.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-11"><span class="nav-number">68.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-10"><span class="nav-number">69.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-10"><span class="nav-number">70.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-12"><span class="nav-number">71.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-12"><span class="nav-number">72.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-12"><span class="nav-number">73.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-12"><span class="nav-number">74.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-11"><span class="nav-number">75.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-11"><span class="nav-number">76.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-13"><span class="nav-number">77.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-13"><span class="nav-number">78.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-13"><span class="nav-number">79.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-13"><span class="nav-number">80.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-12"><span class="nav-number">81.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-12"><span class="nav-number">82.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-13"><span class="nav-number">83.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-14"><span class="nav-number">84.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-14"><span class="nav-number">85.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-14"><span class="nav-number">86.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-14"><span class="nav-number">87.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-14"><span class="nav-number">88.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-13"><span class="nav-number">89.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-15"><span class="nav-number">90.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-15"><span class="nav-number">91.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-15"><span class="nav-number">92.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-15"><span class="nav-number">93.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-15"><span class="nav-number">94.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-14"><span class="nav-number">95.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-16"><span class="nav-number">96.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-16"><span class="nav-number">97.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-16"><span class="nav-number">98.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-16"><span class="nav-number">99.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-16"><span class="nav-number">100.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-15"><span class="nav-number">101.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-17"><span class="nav-number">102.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-17"><span class="nav-number">103.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-17"><span class="nav-number">104.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-17"><span class="nav-number">105.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-17"><span class="nav-number">106.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-16"><span class="nav-number">107.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-18"><span class="nav-number">108.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-18"><span class="nav-number">109.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-18"><span class="nav-number">110.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-18"><span class="nav-number">111.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-18"><span class="nav-number">112.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-17"><span class="nav-number">113.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-01-19"><span class="nav-number">114.</span> <span class="nav-text">Pass-01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-02-19"><span class="nav-number">115.</span> <span class="nav-text">Pass-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-03-19"><span class="nav-number">116.</span> <span class="nav-text">Pass-03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-04-19"><span class="nav-number">117.</span> <span class="nav-text">Pass-04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-05-19"><span class="nav-number">118.</span> <span class="nav-text">Pass-05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-18"><span class="nav-number">119.</span> <span class="nav-text">Pass-06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-06-19"><span class="nav-number">120.</span> <span class="nav-text">Pass-06</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
